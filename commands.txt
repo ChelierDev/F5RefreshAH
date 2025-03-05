@@ -1,0 +1,68 @@
+/run print(AuctionHouseFrame.ItemSellFrame:GetNumChildren())
+/run print(AuctionHouseFrame.ItemBuyFrame:GetNumChildren())
+/dump AuctionHouseFrame.CommoditiesBuyFrame
+
+
+/run AuctionHouseFrame.ItemBuyFrame.BuyoutFrame.BuyoutButton:Click()
+
+/run for i = 5, AuctionHouseFrame.CommoditiesBuyFrame:GetNumChildren() do 
+	local child = select(i, AuctionHouseFrame.CommoditiesBuyFrame:GetChildren()) 
+	print("El child es:", child:GetName())
+end
+
+/run for i = 1, AuctionHouseFrame.ItemBuyFrame:GetNumChildren() do 
+	local child = select(i, AuctionHouseFrame.ItemBuyFrame:GetChildren()) 
+	if child:GetObjectType() == "Button" then
+		print("Clicky cliky")
+	end
+end
+	
+/run print("A")
+	print("B")
+
+/run for i = 1, AuctionHouseFrame.CommoditiesBuyFrame:GetNumChildren() do 
+	local child = select(i, AuctionHouseFrame.CommoditiesBuyFrame:GetChildren()) 
+	print("Hijos child:", child:GetObjectType())
+	child:Click()
+end
+
+local function Buy():
+	if ahOpen then
+		for i = 1, AuctionHouseFrame.ItemBuyFrame:GetNumChildren() do 
+			local child = select(i, AuctionHouseFrame.ItemBuyFrame:GetChildren()) 
+            if child:GetObjectType() == "CheckButton" then
+                PrintDebugMessage("Hola holita")
+                child:Click()
+		end
+	end
+
+
+-- Función para actualizar la subasta
+local function UpdateAuctionHouse()
+    if ahOpen then
+        for i = 1, AuctionHouseFrame.ItemSellFrame:GetNumChildren() do 
+            local child = select(i, AuctionHouseFrame.ItemSellFrame:GetChildren()) 
+            if child:GetObjectType() == "CheckButton" then
+                PrintDebugMessage("Hola holita")
+                child:Click()
+            end
+        end    
+        PrintDebugMessage("Actualizando la casa de subastas...")
+
+
+    else
+        PrintDebugMessage("La casa de subastas no está abierta.")
+    end
+end
+
+
+
+/run for k, v in pairs(AuctionHouseFrame.CommoditiesBuyFrame) do
+    print(k, v)
+end
+
+/run for k, v in pairs(AuctionHouseFrame.CommoditiesBuyFrame.ItemList) do
+    print(k, v)
+end
+
+AuctionHouseFrame.CommoditiesBuyFrame.ItemList.UpdateDr
