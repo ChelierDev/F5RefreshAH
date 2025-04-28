@@ -2,6 +2,6 @@
 ## Title: F5Refresh
 ## Version: 1.0
 ## Author: ChelierDev
-## Notes: F5 refreshes AH, F4 buys & F3 confirms
+## Notes: F5 refreshes AH and LFG panel, F4 buys & F3 confirms
 
 Myaddon.lua
