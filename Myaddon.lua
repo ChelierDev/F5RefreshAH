@@ -37,6 +37,10 @@ local function ReloadAH()
         elseif AuctionHouseFrameAuctionsFrame.AllAuctionsList:IsShown() then
             AuctionHouseFrameAuctionsFrame.AllAuctionsList.RefreshFrame.RefreshButton:Click()
         end
+    else
+        if LFGListFrame:IsShown() then
+            LFGListFrame.SearchPanel.RefreshButton:Click()
+        end
     end
 end
 
